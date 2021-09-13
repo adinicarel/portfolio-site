@@ -341,11 +341,11 @@ const resumeright = {
 const certifications = {
   certifications: [
     {
-      title: "The Complete Web Developer from Zero to Mastery",
+      title: "The Complete Web Developer: Zero to Mastery",
       subtitle: "Udemy",
       logo_path: "udemy-logo.png",
       certificate_link:
-        "https://www.udemy.com/certificate/UC-b17c4c21-91e3-4f8b-b9c2-259468910985/",
+        "https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/",
       alt_name: "Udemy-logo",
       color_code: "#000000",
     },
@@ -354,7 +354,7 @@ const certifications = {
       subtitle: "Udemy",
       logo_path: "udemy-logo.png",
       certificate_link:
-        "https://www.udemy.com/certificate/UC-b17c4c21-91e3-4f8b-b9c2-259468910985/",
+        "https://www.udemy.com/course/the-complete-javascript-course/",
       alt_name: "Udemy-logo",
       color_code: "#000000",
     },
@@ -362,17 +362,19 @@ const certifications = {
       title: "Developing Cloud Applications with Node.js and React",
       subtitle: "Stanford - IBM",
       logo_path: "edx-logo.png",
-      certificate_link: "https://courses.edx.org/dashboard",
-      alt_name: "IBM - CAD220EN",
+      certificate_link:
+        "https://www.edx.org/es/course/developing-cloud-applications-with-nodejs-and-react",
+      alt_name: "Stanford-IDX-logo",
       color_code: "#000000",
     },
     {
-      title: "Introduction to Cloud Development with HTML, CSS, and JavaScript",
+      title:
+        "Introduction to Cloud Development with HTML5, CSS3, and JavaScript",
       subtitle: "Stanford - IBM",
       logo_path: "edx-logo.png",
       certificate_link:
-        "https://courses.edx.org/dashboard?access_response_error=Access+to+Introduction+to+Cloud+Development+with+HTML%2C+CSS%2C+and+JavaScript+expired+on+Nov+30%2C+2020",
-      alt_name: "IBM - CAD101EN",
+        "https://www.edx.org/es/course/introduction-to-cloud-development-with-html5-css3-and-javascript",
+      alt_name: "Stanford-IDX-logo",
       color_code: "#000000",
     },
   ],

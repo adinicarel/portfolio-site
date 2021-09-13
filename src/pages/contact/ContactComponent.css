@@ -106,8 +106,16 @@
     max-height: 350px;
   }
 
-  .address-heading-text-div {
+  .contact-heading-text-div {
+    margin-top: 45px;
+  }
+
+  .contact-heading-text-div > .social-media-div {
     margin-top: 40px;
+  }
+
+  .contact-heading-text-div > p:last-of-type {
+    margin-bottom: 50px;
   }
 
   .contact-heading-div {
