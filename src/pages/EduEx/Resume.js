@@ -8,8 +8,8 @@ export default function Resume() {
     <Container fluid className="resume-section">
       <Container>
         <Row className="resume">
-          <div className="heading-div">
-            <div>
+          <section className="heading-div">
+            <article>
               <Col md={6} className="resume-left">
                 {resumeleft.left.title.map((head) => {
                   return (
@@ -29,8 +29,8 @@ export default function Resume() {
                   );
                 })}
               </Col>
-            </div>
-            <div>
+            </article>
+            <article>
               <Col md={6} className="resume-right">
                 {resumeright.right.map((head) => {
                   return (
@@ -50,8 +50,8 @@ export default function Resume() {
                   );
                 })}
               </Col>
-            </div>
-          </div>
+            </article>
+          </section>
         </Row>
       </Container>
     </Container>

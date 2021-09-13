@@ -8,12 +8,12 @@ class Certifications extends Component {
   render() {
     const theme = this.props.theme;
     return (
-      <div className="main" id="certs">
+      <section className="main" id="certs">
         <div className="certs-header-div">
           <Fade bottom duration={2000} distance="20px">
-            <h1 className="certs-header" style={{ color: theme.text }}>
-              Certifications &#38; Badges
-            </h1>
+            <h2 className="certs-header" style={{ color: theme.text }}>
+              Online Courses
+            </h2>
           </Fade>
         </div>
         <div className="certs-body-div">
@@ -21,9 +21,8 @@ class Certifications extends Component {
             return <CertificationCard certificate={cert} theme={theme} />;
           })}
         </div>
-      </div>
+      </section>
     );
   }
 }
-
 export default Certifications;

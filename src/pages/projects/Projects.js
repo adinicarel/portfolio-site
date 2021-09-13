@@ -9,11 +9,16 @@ import { projectsHeader } from "../../portfolio.js";
 import { projectcards } from "../../portfolio";
 import { CardColumns, Card } from "react-bootstrap";
 import "./Projects.css";
-import ProjectsImg from "./ProjectsImg";
+import ProjectsAnim from "./ProjectsAnim";
+import image1 from "../../assets/projects/movy-es-frontend.png";
+import image2 from "../../assets/projects/movy-es-backend.png";
+import image3 from "../../assets/projects/robofriends.png";
+import image4 from "../../assets/projects/forkify.png";
 
 class Projects extends Component {
   render() {
     const theme = this.props.theme;
+
     return (
       <div className="projects-main">
         <Header theme={theme} />
@@ -21,7 +26,7 @@ class Projects extends Component {
           <Fade bottom duration={2000} distance="40px">
             <div className="projects-heading-div">
               <div className="projects-heading-img-div">
-                <ProjectsImg theme={theme} />
+                <ProjectsAnim theme={theme} />
               </div>
               <div className="projects-heading-text-div">
                 <h1
@@ -43,44 +48,46 @@ class Projects extends Component {
         <div className="repo-cards-div-main">
           <CardColumns>
             {projectcards.list.map((proj) => {
+              const projectImage =
+                proj.id === 1
+                  ? image1
+                  : proj.id === 2
+                  ? image2
+                  : proj.id === 3
+                  ? image3
+                  : proj.id === 4
+                  ? image4
+                  : null;
               return (
-                <Card className="h-100">
+                <Card>
                   <Card.Img
                     variant="top"
-                    src={require(`../../assets/projects/${proj.img_path}`)}
+                    key={proj.id}
+                    alt={proj.title.toLocaleLowerCase()}
+                    src={projectImage}
                   />
                   <Card.Body>
                     <Card.Title>
                       <h2 style={{ lineHeight: "1.5", marginTop: "0" }}>
                         {proj.title}
-                        <a
-                          style={{ color: theme.text }}
-                          href={proj.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <i
-                            className={`fas fa-external-link-alt`}
-                            style={{
-                              color: proj.linkcolor,
-                              marginLeft: "10px",
-                            }}
-                          ></i>
-                        </a>
-                        <a
-                          style={{ color: theme.text }}
-                          href={proj.code}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <i
-                            className={`fab fa-github`}
-                            style={{
-                              color: proj.linkcolor,
-                              paddingLeft: "10px",
-                            }}
-                          ></i>
-                        </a>
+                        {proj.code !== "" ? (
+                          <a
+                            style={{ color: theme.text }}
+                            href={proj.code}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i
+                              className={`fab fa-github`}
+                              style={{
+                                color: proj.linkcolor,
+                                paddingLeft: "10px",
+                              }}
+                            ></i>
+                          </a>
+                        ) : (
+                          <span></span>
+                        )}
                       </h2>
                     </Card.Title>
                     <div>
@@ -110,9 +117,9 @@ class Projects extends Component {
           </CardColumns>
         </div>
         <Button
-          text={"More Projects"}
+          text={"More info"}
           className="project-button"
-          href="https://github.com/rohankokkula"
+          href="https://github.com/adinicarel/"
           newTab={true}
           theme={theme}
         />

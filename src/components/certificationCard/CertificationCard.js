@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./CertificationCard.css";
 import { Fade } from "react-reveal";
+import edxLogo from "../../assets/certificates/edx-logo.png";
+import udemyLogo from "../../assets/certificates/udemy-official.svg";
 
 class CertificationCard extends Component {
   render() {
@@ -8,7 +10,7 @@ class CertificationCard extends Component {
     const theme = this.props.theme;
     return (
       <Fade bottom duration={2000} distance="20px">
-        <div className="cert-card">
+        <article className="cert-card">
           <div className="content">
             <div className="content-overlay"></div>
             <div
@@ -17,7 +19,7 @@ class CertificationCard extends Component {
             >
               <img
                 className="logo_img"
-                src={require(`../../assets/certificates/${certificate.logo_path}`)}
+                src={certificate.subtitle !== "Udemy" ? edxLogo : udemyLogo}
                 alt={certificate.alt_name}
               />
             </div>
@@ -41,7 +43,7 @@ class CertificationCard extends Component {
               {certificate.subtitle}
             </h3>
           </div>
-        </div>
+        </article>
       </Fade>
     );
   }

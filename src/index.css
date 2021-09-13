@@ -1,11 +1,4 @@
 @font-face {
-  font-family: "Agustina Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Agustina Regular"),
-    url("./assets/fonts/Agustina.woff") format("woff");
-}
-@font-face {
   font-family: "Montserrat";
   src: local("Montserrat"),
     url("./assets/fonts/Montserrat-Regular.ttf") format("woff");
@@ -40,9 +33,10 @@
   src: local("Google Sans Regular"),
     url("./assets/fonts/GoogleSans-Regular.ttf") format("woff");
 }
+
 @font-face {
-  font-family: "Code";
-  src: local("Code"), url("./assets/fonts/Code.ttf") format("woff");
+  font-family: "Relax";
+  src: local("Relax"), url("./assets/fonts/Relax.ttf") format("woff");
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
