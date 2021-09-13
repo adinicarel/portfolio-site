@@ -1,10 +1,10 @@
-<p align="center"> 
-    <img src="repo_images/banner-01.png" align="center"></img>
+<p style="text-align:center"> 
+    <img src="repo_images/logo-Adrian.PNG" style="text-align:center" />
 </p>
 
-<h3 align="center"> A clean, beautiful, responsive and 100% customizable portfolio <br /> template for Data Scientists! </h3>
+<h3 style="text-align:center> A clean, beautiful, responsive and 100% customizable portfolio <br /> template for Data Scientists! ></h3>
 
-<p align="center">
+<p style="text-align:center">
   <a href="https://nodejs.org/en/blog/release/v12.13.0/"><img alt="NodeJS" src="https://img.shields.io/badge/node-12.14.1-important?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/npm/v/6.13.4"><img alt="NPM" src="https://img.shields.io/badge/npm-6.13.7-blueviolet?style=flat-square" /></a>
   <a href="https://reactjs.org/"><img alt="Made With React" src="https://img.shields.io/badge/made%20with-react-61DAFB?style=flat-square" /></a>
@@ -17,9 +17,9 @@
   <a href="https://ashutoshhathidara.com/"><img alt="License" src="http://img.shields.io/:license-mit-blue.svg?style=flat-square?style=flat-square" /></a>
   <a href="https://img.shields.io/badge/price-free-ff69b4"><img alt="Price" src="https://img.shields.io/badge/price-free-ff69b4?style=flat-square" /></a>
 </p>
-<p align="center"> 
-    <a href="https://rohankokkula.netlify.app" target="_blank">
-    <img src="repo_images/landing.PNG"></img>
+<p style="text-align:center"> 
+    <a href="https://adinicarel.netlify.app" target="_blank">
+    <img src="repo_images/landing-page-adi-folio.PNG">
   </a>
 </p>
 
@@ -30,7 +30,7 @@
 ✔️ Projects\
 ✔️ Contact\
 <br>
-To view a live example, **[click here](https://rohankokkula.netlify.app/)**
+To view a live example, **[click here](https://adinicarel.netlify.app/)**
 
 # Clone And Use 📋
 
@@ -38,12 +38,12 @@ To view a live example, **[click here](https://rohankokkula.netlify.app/)**
 - While installing `nodejs` and `npm`, try to install versions which are equal or greater than the versions mentioned in badges above.
 - In case you want to help developing it or simply saving it, you can fork the repository just by clicking the button on the top-right corner of this page.
 - After the successful installation of `nodejs` and `npm`, clone the repository into your local system using below command:
-  - ```python
-     git clone https://github.com/rohankokkula/datasciencefolio.git
+  - ```
+     git clone https://github.com/adinicarel/
     ```
   - This will clone the whole repository in your system.
 - To download required dependencies to your system, navigate to the directory where the cloned repository resides and execute following command:
-  - ```python
+  - ```
     npm install
     ```
 - Now, the project is ready to use.
@@ -57,7 +57,7 @@ In this project, there are basically 4 things that you need to change to customi
 
 You will find `src/portfolio.js` file which contains the complete information about the user. The file looks something like below:
 
-```python
+```
 // Home Page
 const greeting = {
     ...
@@ -78,30 +78,39 @@ If you want to play around with alignment or CSS, the specific component's css i
 ### Assets
 
 So basically I demonstrated 2 types of visual graphics.
-- Animated graphics([lottiefiles](https://lottiefiles.com/))
-  - In order to use your own animated graphics, 
-    - go to [lottiefiles](https://lottiefiles.com/) 
+
+- Animated graphics([lottiefiles](https://lottiefiles.com/)) rendered by means of this player ([react-lottie-player](https://www.npmjs.com/package/react-lottie-player))
+
+  - In order to use your own animated graphics,
+
+    - go to [lottiefiles](https://lottiefiles.com/)
     - search your favourite lottie(animation)
     - Download the `JSON` version of animated file
     - Now you can import this into any of the desired container/component using
     - ```
-      import lottie from 'lottie-web';
-      import React, {useRef,useEffect } from "react";
-      export default function BannerImg(){
-      const container = useRef(null)
+      import Lottie from 'react-lottie-player/dist/LottiePlayerLight';
+      import React, { useEffect, useState } from "react";
+
+      const LottieAnimation = () => {
+
+      const [animationData, setAnimationData] = useState();
+
       useEffect(() => {
-        lottie.loadAnimation({
-          container: container.current,
-          renderer: 'svg',
-          loop: true,
-          autoplay: true,
-          animationData: require('./banner.json')})}, [])
-        return (
-          <div className="App">
-            <div className="container" ref={container}></div>
-          </div>);} 
+        import('./banner.json').then(setAnimationData);
+      },[]);
+
+      if(!animationData) return <div>Loading animation...</div>
+      return (
+        <div className="App">
+          <Lottie animationData={animationData} loop={true} />
+        </div>
+      );
+      };
+      export default LottieAnimation;
       ```
+
     - here, `banner.json` is your downloaded animated file
+    - I used the promise to faster render when the app loads
 
 - Static pngs/svgs/jpeg
   - you need to add the desired pngs to the same folder of `any-component.js`
@@ -119,48 +128,44 @@ So basically I demonstrated 2 types of visual graphics.
       }
     export default BannerImg;
     ```
-- to save up your time and get you out of confusion, I've created both the versions(animated & static svgs) and commented it out.
-- So if you don't like to use animated svgs, just delete that code and uncomment the function for static svgs
 
 ### Splash Logo
 
-Note here that if you click [my portfolio](https://rohankokkula.netlify.app), you can see the logo at the beginning. 
+Note here that if you click [my portfolio](https://adinicarel.netlify.app), you can see the logo at the beginning.
 
-  - You can open `src/portfolio.js` file and at the top of this file you will see `settings` component as below:
-  - ```python
-    // Website related settings
-    const settings = {
-      isSplash: true,
-    };
-    ```
-  - Change `isSplash` from `true` to `false`.
-  - Now, if you see your website using `npm start`, it will directly open `home` rather than logo `splash` screen.
-  - You can change it from `src/assets/logo` and replace with your own signature logo
-
+- You can open `src/portfolio.js` file and at the top of this file you will see `settings` component as below:
+- ```
+  // Website related settings
+  const settings = {
+    isSplash: true,
+  };
+  ```
+- Change `isSplash` from `true` to `false`.
+- Now, if you see your website using `npm start`, it will directly open `home` rather than logo `splash` screen.
+- You can change it from `src/assets/logo` and replace with your own signature logo
 
 ### Google Analytics Tracking ID
 
 - First, you need to set up your Google Analytics Account.
 - Follow these resources for seamless setup
-    - [Easy Google Analytics 4 Setup 2021](https://www.youtube.com/watch?v=dPYx-eS4gyE)
-    - [Track Users In Your React App With Google Analytics](https://www.youtube.com/watch?v=pBeKlQ6CMJM)
+  - [Easy Google Analytics 4 Setup 2021](https://www.youtube.com/watch?v=dPYx-eS4gyE)
+  - [Track Users In Your React App With Google Analytics](https://www.youtube.com/watch?v=pBeKlQ6CMJM)
 - You'll be needing a Trackin-ID for your website which normally looks like `UA-199564465-1`
-- Do not get confused between Tracking-ID & Measurement ID. Both are Different.
+- Do not get confused between Tracking-ID & Measurement ID. They are Different.
 - Once you get the tracking ID, go to `src/App.js` and replace your tracking ID
-Note: Do not use Firefox Browser for testing the ID. Use Chrome instead.
-
+  Note: Do not use Firefox Browser for testing the ID. Use Chrome instead.
 
 # Deployment 📦
 
 - Once you are done with your setup and have successfully completed all steps above, you need to put your website online!
 - I highly recommend using [Netlify](https://www.netlify.com/) to achieve this the EASIEST WAY.
-- To deploy your website, you need to follow 2 steps. 
-    -   First you need to create a github repository and push all the files excluding node_modules(automatically ignored by .gitignore)
-    -   setup account at netlify & complete the login/signup process
-    -   Now, click on `New site from Git` and connect it with your github account
-    -   You will find the entire list of your repositories, select your portfolio repo.
-    -   Click on `Deploy site`
-    -   Tadaa! Your site is live!
+- To deploy your website, you need to follow 2 steps.
+  - First you need to create a github repository and push all the files excluding node_modules(automatically ignored by .gitignore)
+  - setup account at netlify & complete the login/signup process
+  - Now, click on `New site from Git` and connect it with your github account
+  - You will find the entire list of your repositories, select your portfolio repo.
+  - Click on `Deploy site`
+  - Tadaa! Your site is live!
 
 # Technologies used 🛠️
 
@@ -181,4 +186,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE)
 
 # References 👏🏻
 
-- Some Design and Implementation Ideas are taken from [Ashutosh Hathidara's Portfolio Project](https://github.com/ashutosh1919/masterPortfolio) & [Saad Pasta's Portfolio Project](https://github.com/saadpasta/developerFolio)
+- Some Design and Implementation Ideas are taken from [Rohan Kokkula's Portfolio Project](https://github.com/rohankokkula/datasciencefolio/)
+  #   p o r t f o l i o - s i t e 
+   
+   
