@@ -26,7 +26,13 @@ class Header extends Component {
         <SeoHeader />
         <header className="header" fixed="top">
           <NavLink to={link} tag={Link} className="logo">
-            <img className="logo_header" src={logo} alt="site-logo" />
+            <img
+              className="logo_header"
+              src={logo}
+              alt="site-logo"
+              width="188px"
+              height="75px"
+            />
           </NavLink>
           <input className="menu-btn" type="checkbox" id="menu-btn" />
           <label className="menu-icon" htmlFor="menu-btn">

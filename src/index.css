@@ -7,6 +7,7 @@
   font-family: "Google Sans Bold";
   src: local("Google Sans Bold"),
     url("./assets/fonts/GoogleSans-Bold.ttf") format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: "Google Sans Bold Italic";
@@ -32,11 +33,13 @@
   font-family: "Google Sans Regular";
   src: local("Google Sans Regular"),
     url("./assets/fonts/GoogleSans-Regular.ttf") format("woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Relax";
   src: local("Relax"), url("./assets/fonts/Relax.ttf") format("woff");
+  font-display: swap;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
